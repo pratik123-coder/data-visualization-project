@@ -1,28 +1,18 @@
-import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Typography, Paper } from '@mui/material';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-const ChartPage = ({ data }) => {
-  return (<>
-  <div>
-    <Paper elevation={3} style={{ padding: 20, margin: 20 }}>
-      <Typography variant="h4" align="center" gutterBottom>
-        Salary Chart
-      </Typography>
-      <ResponsiveContainer width="100%" height={400}>
-        <BarChart data={data}>
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="salary" fill="#ff0000" name="Salary less than 20k" />
-          <Bar dataKey="salary" fill="#00ff00" name="Salary greater than 100k" />
-        </BarChart>
-      </ResponsiveContainer>
-    </Paper>
-    </div>
-    </>
+import Home from "./pages/Home";
 
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="relative bg-[radial-gradient(169.40%_89.55%_at_94.76%_6.29%,#AC1D39_0%,#3A130E_100%)] h-full w-full">
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
-};
+}
 
-export default ChartPage;
+export default App;

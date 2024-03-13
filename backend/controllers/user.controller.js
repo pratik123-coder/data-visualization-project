@@ -15,3 +15,15 @@ export const getSalaryDataForChart = async (req, res) => {
         res.status(500).json({ error: "Internal server error" });
     }
 };
+
+export const getUserData = (req, res) => {
+    
+    const { _id, username, fullName } = req.user;
+  
+    res.status(200).json({
+      _id,
+      username,
+      fullName,
+      message: 'User data retrieved successfully',
+    });
+  };

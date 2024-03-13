@@ -2,7 +2,8 @@ import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer, Typography, Paper } from '@mui/material';
 
 const ChartPage = ({ data }) => {
-  return (
+  return (<>
+  <div>
     <Paper elevation={3} style={{ padding: 20, margin: 20 }}>
       <Typography variant="h4" align="center" gutterBottom>
         Salary Chart
@@ -18,6 +19,9 @@ const ChartPage = ({ data }) => {
         </BarChart>
       </ResponsiveContainer>
     </Paper>
+    </div>
+    </>
+
   );
 };
 

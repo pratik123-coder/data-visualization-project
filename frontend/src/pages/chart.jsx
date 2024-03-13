@@ -19,7 +19,7 @@ const Chart = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{ height: '100vh' }}>
       <h1>Chart Page</h1>
       <ChartPage data={chartData} />
     </div>

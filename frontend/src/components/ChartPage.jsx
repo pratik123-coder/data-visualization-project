@@ -1,18 +1,33 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { useTheme } from '@mui/material/styles';
+import { Paper, Typography, BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from '@mui/material';
 
-import Home from "./pages/Home";
+const ChartPage = ({ data }) => {
+  const theme = useTheme();
 
-
-function App() {
   return (
-    <BrowserRouter>
-      <div className="relative bg-[radial-gradient(169.40%_89.55%_at_94.76%_6.29%,#AC1D39_0%,#3A130E_100%)] h-full w-full">
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <Paper elevation={3} sx={{ padding: 20, margin: 20 }}>
+      <Typography variant="h4" align="center" gutterBottom>
+        Salary Chart
+      </Typography>
+      <BarChart data={data}>
+        <XAxis dataKey="name" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar
+          dataKey="salary"
+          fill={theme.palette.error.main} // Use theme for color
+          name="Salary less than 20k"
+        />
+        <Bar
+          dataKey="salary"
+          fill={theme.palette.success.main} // Use theme for color
+          name="Salary greater than 100k"
+        />
+      </BarChart>
+    </Paper>
   );
-}
+};
 
-export default App;
+export default ChartPage;

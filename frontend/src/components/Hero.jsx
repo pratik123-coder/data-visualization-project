@@ -5,11 +5,10 @@ function Hero() {
   return (
 
     <div
-      className="w-full h-fit relative pt-96"
-      style={{ marginTop: "100vh" }}
+      className="w-full h-screen"
     >
 
-      Hello world
+      <h1>Hello world</h1>
     </div>
   );
 }

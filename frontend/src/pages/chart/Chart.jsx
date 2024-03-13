@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ChartPage from '../components/ChartPage';
+import ChartPage from '../../components/ChartPage';
 import axios from 'axios';
 
 const Chart = () => {
